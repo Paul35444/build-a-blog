@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<ul>
+{% for blog in blogs %}
+    <br>
+    <div><a href="/blog/{{blog.key().id()}}">{{blog.subject}}</a></div>
+    <div>{{blog.content}}</div>
+    <br>
+
+{% endfor %}
+</ul>
+
+<form action="/newpost" method="get">
+    <input type="submit" value="Post"/>
+</form>
+
+{% endblock %}
